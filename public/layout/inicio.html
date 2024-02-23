@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang='es'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <meta http-equiv='Content-Security-Policy' content='upgrade-insecure-requests'>
+        <!--================== FAVICON ==================-->
+        <link rel='icon' href='' type='image/x-icon'>
+        <!--================== ESTILOS ==================-->
+        <link rel='stylesheet' href='../dist/output.css'>
+        <!--================== BOXICONS ==================-->
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css'>
+        <!--================== DATATABLE==================-->
+        <link rel='stylesheet' href='https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css'>
+        <link rel='stylesheet' href='https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css'>
+        <link rel='stylesheet' href='https://cdn.datatables.net/select/2.0.0/css/select.dataTables.css'>
+        <!--================== SCRIPTS==================-->
+        <script async defer src="https://apis.google.com/js/api.js" id="gapi"></script>
+        <script async defer src="https://accounts.google.com/gsi/client" id="gis"></script>
+        <!--================== TITLE ==================-->
+        <title>Cartleria NoonFood</title>
+    </head>
+    <body class="h-screen antialiased scroll">
+        <div id="overlay" class="overlay"></div>
+        <main class="flex justify-center w-full h-full lg:justify-between tall:min-h-screen">
+            <section class="profundidad">
+                <!-- NAVBAR -->
+                <nav>
+                    <h3>Carteleria NoonFood</h3>
+                    <button id="signout_button">
+                        <i class='bx bx-log-in'></i>
+                    </button>
+                </nav>
+                <article class="flex items-center justify-between w-full px-5 mt-10">
+                    <button class="btn btn__alt" id="open_modal">Agregar</button>
+                    <button class="btn !bg-[rgb(255,49,49)] text-white" id="delete">
+                        <i class='bx bxs-trash'></i>
+                    </button>
+                </article>
+                <article class="px-5 my-10">
+                    <table id="example" class="display nowrap !min-w-[200rem]">
+                        <thead>
+                            <tr>
+                                <th class="!max-w-[5rem]"></th>
+                                <th class="!max-w-[10rem]">Topper</th>
+                                <th>Formato</th>
+                                <th>Vigencia</th>
+                                <th class="!max-w-[10rem]">Sku</th>
+                                <th>Marca</th>
+                                <th class="!min-w-[20rem]">Descripcion</th>
+                                <th class="!max-w-[5rem]">Regular</th>
+                                <th class="!max-w-[5rem]">Sin Cmr</th>
+                                <th class="!max-w-[5rem]">Oferta</th>
+                                <th class="!max-w-[5rem]">N cuota</th>
+                                <th class="!max-w-[5rem]">C Mens</th>
+                                <th class="!max-w-[5rem]">E</th>
+                                <th class="!max-w-[5rem]">D</th>
+                                <th class="!max-w-[5rem]">Interes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </article>
+            </section>
+            <!-- MODAL SECTION -->
+            <section id="section__modal" class="section__modal">
+                <article class="modal" id="modal">
+                    <!-- MODAL CONTENT-->
+                    <form id="form-Data">
+                        <!-- MODAL HEADER -->
+                        <div class="modal__header">
+                            <!-- TITLE MODAL -->
+                            <h3 class="modal__title" id="modal__title">Big Ticket</h3>
+                            <!-- CLOSE BUTTON -->
+                            <button type="button" id="modal__close" class="modal__close">
+                                <i class="bx bx-x"></i>
+                            </button>
+                        </div>
+                        <!-- MODAL BODY -->
+                        <div class="modal__form">
+                            <div class="!flex !flex-col gap-2 justify-center items-center">
+                                <svg id="barcode" class="!w-full"></svg>
+                                <p id="ean" class="text-xs text-center"></p>
+                            </div>
+                            <div class="!grid !grid-cols-2 gap-4">
+                                <div class="form__element !col-span-1">
+                                    <label for="sku" class="form__element--label">Sku</label>
+                                    <input type="text" name="sku" id="sku" class="peer form__element--input"  pattern="[0-9]+" maxlength="8">
+                                </div>
+                                <div class="form__element !col-span-1">
+                                    <label for="marca" class="form__element--label">Marca</label>
+                                    <input type="text" name="marca" id="marca" class="peer form__element--input">
+                                </div>
+                            </div>
+                            <div class="form__element">
+                                <span class="flex items-center justify-between w-full">
+                                    <label for="descripcion" class="form__element--label">Descripción</label>
+                                </span>
+                                <input type="text" name="descripcion" id="descripcion" class="peer form__element--input">
+                            </div>
+                            <div class="!grid !grid-cols-2 gap-4">
+                                <div class="form__element !col-span-1">
+                                    <label for="topper" class="form__element--label">Topper</label>
+                                    <input type="text" name="topper" id="topper" class="peer form__element--input">
+                                </div>
+                                <div class="form__element !col-span-1">
+                                    <label for="formato" class="form__element--label">Formato</label>
+                                    <select size="1" id="formato" name="formato" class="form__element--input">
+                                        <option value="preciaso">Preciazo</option>
+                                        <option value="ou">Oportunidad Unica</option>
+                                        <option value="liquidacion">Liquidacion</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form__element !col-span-1">
+                                <label for="vigencia" class="form__element--label">Vigencia</label>
+                                <input type="text" name="vigencia" id="vigencia" class="peer form__element--input">
+                            </div>
+                            <div class="!grid !grid-cols-2 gap-4">
+                                <div class="form__element !col-span-1">
+                                    <label for="regular" class="form__element--label">Regular</label>
+                                    <input type="text" name="regular" id="regular" class="peer form__element--input" pattern="[0-9]+([,\.][0-9]+)?">
+                                </div>
+                                <div class="form__element !col-span-1">
+                                    <label for="oferta" class="form__element--label">Oferta</label>
+                                    <input type="text" name="oferta" id="oferta" class="peer form__element--input" pattern="[0-9]+([,\.][0-9]+)?">
+                                </div>
+                            </div>
+                            <div class="modal--form__button !p-0 !pt-2">
+                                <button type="button" class="btn btn__primary !w-full" id="add_button">
+                                        Agregar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </article>
+            </section>
+        </main>
+        <!--================== MEDIA QUERYS ==================-->
+        <script type='text/javascript' src='https://code.jquery.com/jquery-3.7.1.js'></script>
+        <script type='text/javascript' src='https://code.jquery.com/jquery-latest.js'></script>
+        <!--================== DATATABLE ==================-->
+        <script src='//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js'></script>
+        <script src="https://cdn.datatables.net/select/1.7.0/js/dataTables.select.min.js"></script>
+        <!--================== SCRIPTS ==================-->
+        <script type="module" src="../js/DataTable/dataTable.js"></script>
+        <script type="module" src="../js/modal.js"></script>
+        <script type="module" src="../js/index.js"></script>
+    </body>
+</html>

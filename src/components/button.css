@@ -1,0 +1,12 @@
+.btn{
+    @apply !text-[.65rem] xs:!text-xs !text-center !rounded-md sm:text-base hover:!scale-[1.01] !shadow-md !font-medium !tracking-wider !h-8 px-4
+}
+.btn > a{
+    @apply w-full !p-2
+}
+.btn__primary{
+    @apply !text-white !bg-primary-color
+}
+.btn__alt{
+    @apply bg-white !border  !border-primary-color font-semibold !text-primary-color !tracking-widest focus:outline-none focus:border-primary-color  transition !capitalize hover:scale-[1.01]
+}
