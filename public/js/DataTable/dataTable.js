@@ -1,7 +1,12 @@
 
 export const table = new DataTable('#example', {
+    responsive: {
+        details: {
+            type: 'column',
+            target: -1
+        }
+    },
     ordering: false,
-    scrollX: true,
     pageLength: 10,
     // QUITAR EL AUTO WIDTH
     autoWidth: false,
@@ -21,15 +26,39 @@ export const table = new DataTable('#example', {
         },
     },
     dom: 't',
-    columnDefs: [ {
-        orderable: false,
-        className: 'select-checkbox',
-        targets:   0
-    } ],
+    columnDefs: [
+        {
+            className: 'dtr-control arrow-left',
+            orderable: false,
+            target: 1
+        }
+    ],
+    responsive: {
+        details: {
+            type: 'column',
+            target: 1
+        }
+    },
     select: {
         items: 'row',
-        style:    'multi',
+        style: 'multi',
         selector: 'td:first-child'
     },
-
+    columns: [
+        { data: '', title: '', class: '!bg-gray-200'},
+        { data: 'descripcion', title: 'Descripción', class: '!min-w-[15rem] !text-sm'},
+        { data: 'topper', title: 'Topper', class: '' },
+        { data: 'sku', title: 'Sku', class: '' },
+        { data: 'formato', title: 'Formato', class: '' },
+        { data: 'vigencia', title: 'Vigencia', class: '' },
+        { data: 'marca', title: 'Marca', class: '' },
+        { data: 'regular', title: 'Regular', class: '' },
+        { data: 'scmr', title: 'Sin cmr', class: '' },
+        { data: 'oferta', title: 'Oferta', class: '' },
+        { data: 'ncuota', title: 'N cuota', class: '' },
+        { data: 'cmens', title: 'C Mens', class: '' },
+        { data: 'e', title: 'E', class: '' },
+        { data: 'd', title: 'D', class: '' },
+        { data: 'interes', title: 'Interes', class: '' },
+    ],
 });

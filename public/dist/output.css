@@ -717,10 +717,8 @@ td.dataTables_empty{
         1 !important;
   background-color:
         rgb(255 255 255 / var(--tw-bg-opacity)) !important;
-  padding-left:
-        5% !important;
   text-align:
-        start !important;
+        center !important;
   --tw-shadow:
         0 0 #0000 !important;
   --tw-shadow-colored:
@@ -729,11 +727,35 @@ td.dataTables_empty{
         var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important
 }
 
-@media (min-width: 768px){
-  td.dataTables_empty{
-    padding-left:
-        20% !important
-  }
+table.dataTable>tbody>tr.child ul.dtr-details{
+  display:
+        grid !important;
+  min-width:
+        100% !important;
+  grid-template-columns:
+        repeat(6, minmax(0, 1fr)) !important;
+  gap:
+        1rem !important
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details > li{
+  grid-column:
+        span 2 / span 2 !important
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="5"], table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="2"], table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="6"]{
+  grid-column:
+        span 6 / span 6 !important
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="1"],  table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="3"], table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="4"]{
+  grid-column:
+        span 3 / span 3 !important
+}
+
+.dtr-control.arrow-left::before{
+  display:
+        none !important
 }
 
 .btn{
@@ -2215,6 +2237,11 @@ video {
         sticky
 }
 
+.\!right-0{
+  right:
+        0px !important
+}
+
 .\!top-1{
   top:
         0.25rem !important
@@ -2242,14 +2269,14 @@ video {
         block
 }
 
-.flex{
-  display:
-        flex
-}
-
 .\!flex{
   display:
         flex !important
+}
+
+.flex{
+  display:
+        flex
 }
 
 .inline-flex{
@@ -2262,19 +2289,24 @@ video {
         table
 }
 
-.grid{
-  display:
-        grid
-}
-
 .\!grid{
   display:
         grid !important
 }
 
+.grid{
+  display:
+        grid
+}
+
 .contents{
   display:
         contents
+}
+
+.\!hidden{
+  display:
+        none !important
 }
 
 .hidden{
@@ -2304,24 +2336,19 @@ video {
         100vh
 }
 
-.w-full{
-  width:
-        100%
-}
-
 .\!w-full{
   width:
         100% !important
 }
 
-.\!min-w-\[200rem\]{
-  min-width:
-        200rem !important
+.w-full{
+  width:
+        100%
 }
 
-.\!min-w-\[20rem\]{
+.\!min-w-\[15rem\]{
   min-width:
-        20rem !important
+        15rem !important
 }
 
 .\!min-w-fit{
@@ -2331,14 +2358,31 @@ video {
         fit-content !important
 }
 
-.\!max-w-\[10rem\]{
-  max-width:
-        10rem !important
+.\!min-w-full{
+  min-width:
+        100% !important
 }
 
-.\!max-w-\[5rem\]{
+.\!min-w-max{
+  min-width:
+        -moz-max-content !important;
+  min-width:
+        max-content !important
+}
+
+.\!min-w-\[2rem\]{
+  min-width:
+        2rem !important
+}
+
+.\!min-w-\[1rem\]{
+  min-width:
+        1rem !important
+}
+
+.\!max-w-full{
   max-width:
-        5rem !important
+        100% !important
 }
 
 .border-collapse{
@@ -2432,6 +2476,13 @@ video {
         rgb(153 27 27 / var(--tw-bg-opacity))
 }
 
+.\!bg-gray-200{
+  --tw-bg-opacity:
+        1 !important;
+  background-color:
+        rgb(229 231 235 / var(--tw-bg-opacity)) !important
+}
+
 .\!p-0{
   padding:
         0px !important
@@ -2451,13 +2502,6 @@ video {
         5rem
 }
 
-.px-5{
-  padding-left:
-        1.25rem;
-  padding-right:
-        1.25rem
-}
-
 .px-4{
   padding-left:
         1rem;
@@ -2465,11 +2509,11 @@ video {
         1rem
 }
 
-.py-\[\.2rem\]{
-  padding-top:
-        .2rem;
-  padding-bottom:
-        .2rem
+.px-5{
+  padding-left:
+        1.25rem;
+  padding-right:
+        1.25rem
 }
 
 .\!pt-2{
@@ -2489,9 +2533,18 @@ video {
         1.75rem !important
 }
 
-.text-\[\.7rem\]{
+.\!text-sm{
   font-size:
-        .7rem
+        0.875rem !important;
+  line-height:
+        1.25rem !important
+}
+
+.\!text-xs{
+  font-size:
+        0.75rem !important;
+  line-height:
+        1rem !important
 }
 
 .text-xs{

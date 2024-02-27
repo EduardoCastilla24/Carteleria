@@ -141,6 +141,24 @@ th{
     @apply scroll !border-none pb-2 !min-h-[25rem]  !bg-white
 }
 td.dataTables_empty {
-    @apply !h-[25rem] !text-start !pl-[5%] md:!pl-[20%] !bg-white !shadow-none
+    @apply !h-[25rem] !text-center !bg-white !shadow-none
 }
 
+table.dataTable>tbody>tr.child ul.dtr-details{
+    @apply !grid !grid-cols-6 !gap-4 !min-w-full
+}
+table.dataTable>tbody>tr.child ul.dtr-details > li{
+    @apply !col-span-2
+}
+
+table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="5"], table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="2"], table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="6"] {
+    @apply !col-span-6
+}
+table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="1"],  table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="3"], table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="4"] {
+    @apply !col-span-3
+}
+
+.dtr-control.arrow-left::before{
+    @apply !hidden
+
+}
