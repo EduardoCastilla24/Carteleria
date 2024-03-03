@@ -11,6 +11,7 @@ export function delete_SelectRow(table){
 export function add_NewRow(table, valores) {
 var nuevaFila = $('<tr>' +
         '<td></td>' +
+        '<td><input type="text" id="row-descripcion" name="row-descripcion" value="' + (valores.descripcion || '') + '" class="form__element--input"></td>' +
         '<td><input type="text" id="row-topper" name="row-topper" value="' + (valores.topper || '') + '" class="form__element--input"></td>' +
         '<td><select size="1" id="row-1-formato" name="row-1-formato" class="form__element--input">' +
         '<option value="preciaso" ' + (valores.formato === 'preciaso' ? 'selected="selected"' : '') + '>Preciazo</option>' +
@@ -20,7 +21,6 @@ var nuevaFila = $('<tr>' +
         '<td><input type="text" id="row-vigencia" name="row-vigencia" value="' + (valores.vigencia || '') + '" class="form__element--input"></td>' +
         '<td><input type="text" id="row-sku" name="row-sku" value="' + (valores.sku || '') + '" class="form__element--input"></td>' +
         '<td><input type="text" id="row-marca" name="row-marca" value="' + (valores.marca || '') + '" class="form__element--input"></td>' +
-        '<td><input type="text" id="row-descripcion" name="row-descripcion" value="' + (valores.descripcion || '') + '" class="form__element--input"></td>' +
         '<td><input type="text" id="row-regular" name="row-regular" value="' + (valores.regular || '') + '" class="form__element--input"></td>' +
         '<td><input type="text" id="row-scmr" name="row-scmr" value="' + (valores.scmr || '') + '" class="form__element--input"></td>' +
         '<td><input type="text" id="row-oferta" name="row-oferta" value="' + (valores.oferta || '') + '" class="form__element--input"></td>' +

@@ -124,7 +124,7 @@ thead, tbody{
     @apply !truncate !pr-5 !max-w-[2rem]
 }
 tr.selected > td{
-    @apply !shadow-none !bg-[rgb(255,49,49)]
+    @apply !shadow-none !bg-[hsl(0,100%,69%)]
 }
 table.dataTable:hover > tbody > tr.selected:hover > *, table.dataTable.display > tbody > tr.selected:hover > *{
     @apply  !shadow-none
@@ -162,3 +162,7 @@ table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="1"],  table.d
     @apply !hidden
 
 }
+/* table.dataTable > tbody > tr.selected > td.select-checkbox:before, table.dataTable > tbody > tr.selected > th.select-checkbox:before{
+     font-family: "Font Awesome 5 Free";
+   content: "\444" !important;
+} */

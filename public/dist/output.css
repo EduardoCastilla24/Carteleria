@@ -645,7 +645,7 @@ tr.selected > td{
   --tw-bg-opacity:
         1 !important;
   background-color:
-        rgb(255 49 49 / var(--tw-bg-opacity)) !important;
+        hsl(0 100% 69% / var(--tw-bg-opacity)) !important;
   --tw-shadow:
         0 0 #0000 !important;
   --tw-shadow-colored:
@@ -757,6 +757,11 @@ table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="1"],  table.d
   display:
         none !important
 }
+
+/* table.dataTable > tbody > tr.selected > td.select-checkbox:before, table.dataTable > tbody > tr.selected > th.select-checkbox:before{
+     font-family: "Font Awesome 5 Free";
+   content: "\444" !important;
+} */
 
 .btn{
   height:
@@ -1349,11 +1354,11 @@ table.dataTable>tbody>tr.child ul.dtr-details > li[data-dtr-index="1"],  table.d
   flex-direction:
         column;
   gap:
-        1rem;
+        0.5rem;
   -moz-column-gap:
-        1rem;
+        0.5rem;
        column-gap:
-        1rem;
+        0.5rem;
   padding:
         1rem
 }
@@ -1427,7 +1432,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   align-items:
         flex-start;
   gap:
-        0.5rem
+        0.25rem
 }
 
 @media (min-width: 768px){
@@ -1470,7 +1475,7 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
   background-color:
         rgb(255 255 255 / var(--tw-bg-opacity));
   padding:
-        0.625rem;
+        0.5rem;
   font-size:
         .7rem;
   --tw-text-opacity:
@@ -1534,6 +1539,12 @@ select{
   -moz-appearance: none;
   cursor:
         pointer;
+  overflow:
+        hidden !important;
+  text-overflow:
+        ellipsis !important;
+  white-space:
+        nowrap !important;
   background-image:
         linear-gradient(45deg, transparent 50%, gray 50%),
         linear-gradient(135deg, gray 50%, transparent 50%),
@@ -1562,6 +1573,17 @@ td > .form__element--input{
 td > select.form__element--input{
   text-align:
         start !important
+}
+
+#reader > video{
+  height:
+        100% !important;
+  width:
+        100% !important;
+  -o-object-fit:
+        cover !important;
+     object-fit:
+        cover !important
 }
 
 /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
@@ -2202,6 +2224,11 @@ video {
          
 }
 
+.\!visible{
+  visibility:
+        visible !important
+}
+
 .visible{
   visibility:
         visible
@@ -2252,6 +2279,11 @@ video {
         span 1 / span 1 !important
 }
 
+.\!m-0{
+  margin:
+        0px !important
+}
+
 .my-10{
   margin-top:
         2.5rem;
@@ -2259,14 +2291,34 @@ video {
         2.5rem
 }
 
+.mb-2{
+  margin-bottom:
+        0.5rem
+}
+
 .mt-10{
   margin-top:
         2.5rem
 }
 
+.\!block{
+  display:
+        block !important
+}
+
 .block{
   display:
         block
+}
+
+.\!inline-block{
+  display:
+        inline-block !important
+}
+
+.inline-block{
+  display:
+        inline-block
 }
 
 .\!flex{
@@ -2314,6 +2366,18 @@ video {
         none
 }
 
+.\!h-\[10rem\]{
+  height:
+        10rem !important
+}
+
+.\!h-fit{
+  height:
+        -moz-fit-content !important;
+  height:
+        fit-content !important
+}
+
 .h-full{
   height:
         100%
@@ -2322,6 +2386,11 @@ video {
 .h-screen{
   height:
         100vh
+}
+
+.\!max-h-\[10rem\]{
+  max-height:
+        10rem !important
 }
 
 .min-h-min{
@@ -2336,6 +2405,23 @@ video {
         100vh
 }
 
+.\!w-\[12rem\]{
+  width:
+        12rem !important
+}
+
+.\!w-\[1rem\]{
+  width:
+        1rem !important
+}
+
+.\!w-fit{
+  width:
+        -moz-fit-content !important;
+  width:
+        fit-content !important
+}
+
 .\!w-full{
   width:
         100% !important
@@ -2346,9 +2432,14 @@ video {
         100%
 }
 
-.\!min-w-\[15rem\]{
+.\!min-w-\[12rem\]{
   min-width:
-        15rem !important
+        12rem !important
+}
+
+.\!min-w-\[1rem\]{
+  min-width:
+        1rem !important
 }
 
 .\!min-w-fit{
@@ -2368,16 +2459,6 @@ video {
         -moz-max-content !important;
   min-width:
         max-content !important
-}
-
-.\!min-w-\[2rem\]{
-  min-width:
-        2rem !important
-}
-
-.\!min-w-\[1rem\]{
-  min-width:
-        1rem !important
 }
 
 .\!max-w-full{
@@ -2430,6 +2511,11 @@ video {
         space-between
 }
 
+.\!gap-4{
+  gap:
+        1rem !important
+}
+
 .gap-2{
   gap:
         0.5rem
@@ -2450,9 +2536,26 @@ video {
         0.375rem
 }
 
+.\!border{
+  border-width:
+        1px !important
+}
+
 .border{
   border-width:
         1px
+}
+
+.\!border-transparent{
+  border-color:
+        transparent !important
+}
+
+.border-slate-600{
+  --tw-border-opacity:
+        1;
+  border-color:
+        rgb(71 85 105 / var(--tw-border-opacity))
 }
 
 .\!bg-\[rgb\(255\2c 49\2c 49\)\]{
@@ -2460,6 +2563,13 @@ video {
         1 !important;
   background-color:
         rgb(255 49 49 / var(--tw-bg-opacity)) !important
+}
+
+.\!bg-gray-200{
+  --tw-bg-opacity:
+        1 !important;
+  background-color:
+        rgb(229 231 235 / var(--tw-bg-opacity)) !important
 }
 
 .\!bg-red-800{
@@ -2474,13 +2584,6 @@ video {
         1;
   background-color:
         rgb(153 27 27 / var(--tw-bg-opacity))
-}
-
-.\!bg-gray-200{
-  --tw-bg-opacity:
-        1 !important;
-  background-color:
-        rgb(229 231 235 / var(--tw-bg-opacity)) !important
 }
 
 .\!p-0{

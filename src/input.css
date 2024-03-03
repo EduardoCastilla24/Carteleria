@@ -4,6 +4,7 @@
 @import './components/scroll.css';
 @import './components/sweetAlert.css';
 @import './components/modal.css';
+@import './components/scan.css';
 
 @tailwind base;
 @tailwind components;

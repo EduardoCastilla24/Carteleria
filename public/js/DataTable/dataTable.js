@@ -1,11 +1,5 @@
 
 export const table = new DataTable('#example', {
-    responsive: {
-        details: {
-            type: 'column',
-            target: -1
-        }
-    },
     ordering: false,
     pageLength: 10,
     // QUITAR EL AUTO WIDTH
@@ -27,6 +21,11 @@ export const table = new DataTable('#example', {
     },
     dom: 't',
     columnDefs: [
+
+        {
+            className: 'select-checkbox',
+            target: 0
+        },
         {
             className: 'dtr-control arrow-left',
             orderable: false,
@@ -45,8 +44,8 @@ export const table = new DataTable('#example', {
         selector: 'td:first-child'
     },
     columns: [
-        { data: '', title: '', class: '!bg-gray-200'},
-        { data: 'descripcion', title: 'Descripción', class: '!min-w-[15rem] !text-sm'},
+        { data: '', title: '', class: '!w-[1rem] !min-w-[1rem] !text-sm select-checkbox'},
+        { data: 'descripcion', title: 'Descripción', class: '!w-[12rem] !min-w-[12rem] !text-sm'},
         { data: 'topper', title: 'Topper', class: '' },
         { data: 'sku', title: 'Sku', class: '' },
         { data: 'formato', title: 'Formato', class: '' },
