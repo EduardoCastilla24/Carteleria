@@ -19,6 +19,7 @@
         <!--================== SCRIPTS==================-->
         <script async defer src="https://apis.google.com/js/api.js" id="gapi"></script>
         <script async defer src="https://accounts.google.com/gsi/client" id="gis"></script>
+        
         <!--================== TITLE ==================-->
         <title>Cartleria NoonFood</title>
     </head>
@@ -42,7 +43,6 @@
                 <article class="px-5 my-10">
                     <table id="example" class="display nowrap responsive">
                         <thead>
-                            
                         </thead>
                         <tbody>
                         </tbody>
@@ -65,9 +65,8 @@
                         </div>
                         <!-- MODAL BODY -->
                         <div class="modal__form">
-                            <div class="!flex !flex-col gap-2 justify-center items-center">
-                                <svg id="barcode" class="!w-full"></svg>
-                                <p id="ean" class="text-xs text-center"></p>
+                            <div class="form__element !flex !flex-col gap-2 justify-center items-center !w-full">
+                                <div id="reader"  class="!max-h-[10rem] !h-[10rem] !w-full !max-w-full"></div>
                             </div>
                             <div class="!grid !grid-cols-2 gap-4">
                                 <div class="form__element !col-span-1">
@@ -134,5 +133,9 @@
         <script type="module" src="../js/DataTable/dataTable.js"></script>
         <script type="module" src="../js/modal.js"></script>
         <script type="module" src="../js/index.js"></script>
+        <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.js"></script>
+        <script type="module" src="../js/Scan/scan.js"></script>
+        <script type="module" src="../js/sendData.js"></script>
     </body>
 </html>

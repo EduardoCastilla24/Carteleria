@@ -26,7 +26,7 @@
     @apply flex justify-between items-start p-4 rounded-t border-b sticky top-0 bg-transparent
 }
 .modal__form{
-    @apply flex flex-col gap-4 gap-x-4 p-4 !h-fit !max-h-full
+    @apply flex flex-col gap-2 gap-x-2 p-4 !h-fit !max-h-full
 }
 .modal__form--button{
     @apply flex items-center space-x-2 rounded-b border-t border-gray-200 p-0 pt-2
@@ -42,19 +42,19 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
     -webkit-text-fill-color:#000 !important;
 }
 .form__element{
-    @apply col-span-2 md:col-span-1 relative z-0 mb-2 w-full flex flex-col gap-2 items-start
+    @apply col-span-2 md:col-span-1 relative z-0 mb-2 w-full flex flex-col gap-1 items-start
 }
 .form__element--label{
     @apply block text-[.7rem] font-medium text-gray-400 tracking-wider
 }
 .form__element--input{
-    @apply shadow-sm bg-white border border-gray-300 text-gray-900 text-[.7rem] sm:text-sm rounded-lg focus:ring-primary-color focus:border-primary-color block w-full p-2.5 invalid:bg-red-200 invalid:border-red-500 invalid:focus:border-red-500 !transition-all !duration-300
+    @apply shadow-sm bg-white border border-gray-300 text-gray-900 text-[.7rem] sm:text-sm rounded-lg focus:ring-primary-color focus:border-primary-color block w-full p-2 invalid:bg-red-200 invalid:border-red-500 invalid:focus:border-red-500 !transition-all !duration-300
 }
 
 select{
     -webkit-appearance: none;
     -moz-appearance: none;
-    @apply cursor-pointer
+    @apply cursor-pointer !truncate
 }
 select{
     background-image:
