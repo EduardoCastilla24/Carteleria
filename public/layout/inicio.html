@@ -17,9 +17,8 @@
         <link rel='stylesheet' href='https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css'>
         <link rel='stylesheet' href='https://cdn.datatables.net/select/2.0.0/css/select.dataTables.css'>
         <!--================== SCRIPTS==================-->
-        <script async defer src="https://apis.google.com/js/api.js" id="gapi"></script>
+        <script src="https://apis.google.com/js/api.js" id="gapi"></script>
         <script async defer src="https://accounts.google.com/gsi/client" id="gis"></script>
-        
         <!--================== TITLE ==================-->
         <title>Cartleria NoonFood</title>
     </head>
@@ -131,10 +130,11 @@
         <script src='//cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js'></script>
         <!--================== SCRIPTS ==================-->
         <script type="module" src="../js/DataTable/dataTable.js"></script>
-        <script type="module" src="../js/modal.js"></script>
-        <script type="module" src="../js/index.js"></script>
-        <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+        <script async defer type="module" src="../js/sheets/auth.js"></script>
+        <script async defer type="module" src="../js/sheets/sheets.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@ericblade/quagga2/dist/quagga.js"></script>
+        <script type="module" src="../js/index.js"></script>
+        <script type="module" src="../js/modal.js"></script>
         <script type="module" src="../js/Scan/scan.js"></script>
         <script type="module" src="../js/sendData.js"></script>
     </body>

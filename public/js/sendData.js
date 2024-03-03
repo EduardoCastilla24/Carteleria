@@ -1,3 +1,5 @@
+import { getProducto } from "./sheets/sheets";
+
 export function SendData(ean) {
-    alert(ean)
+    getProducto(ean)
 }

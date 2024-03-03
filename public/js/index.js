@@ -1,6 +1,6 @@
 import { table } from "./DataTable/dataTable.js";
 import { delete_SelectRow, add_NewRow } from "./DataTable/functions.js";
-import { Modal, closeModal } from "./modal.js";
+import { Modal, closeModal, ClearModal } from "./modal.js";
 
 //Eliminar Filas seleccionadas
 $("#delete").on("click", ()=>{
@@ -14,6 +14,31 @@ $('#open_modal').on('click', function() {
 $('#modal__close').on('click', function() {
     closeModal()
 });
+
+
+document.getElementById('signout_button').onclick = function() {
+    Swal.fire({
+        title: '¿Desea Cerrar Sesión?',
+        text: "Al confirmar cerrará la sesión",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Si, salir',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            handleSignoutClick()
+
+            Notiflix.Loading.pulse();
+            setTimeout(function(){
+                // REMOVE LOADER
+                window.location.href = '../../index.html';
+                Notiflix.Loading.remove();
+            }, 700);
+        }
+    })
+};
+
+
 
 //Agregar nuvea fila
 $('#add_button').on('click', function() {
@@ -45,4 +70,7 @@ $('#add_button').on('click', function() {
             interes: 29.90,
         }
     );
+
+    ClearModal()
+
 });

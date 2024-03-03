@@ -13,5 +13,16 @@ export function closeModal(){
     sectionModal.classList.remove('show')
     modal.classList.remove('active')
     overlay.classList.remove('show')
+    ClearModal()
 }
 
+export function ClearModal(){
+    $('#descripcion').val('')
+    $('#sku').val('')
+    $('#marca').val('')
+    $('#oferta').val('')
+    $('#regular').val('')
+    $('#vigencia').val('')
+    $('#topper').val('')
+    $('#formato').val('')
+}
