@@ -7,7 +7,7 @@ Quagga.init({
         target: document.querySelector('#reader')
     },
     decoder: {
-        readers: ["code_128_reader"]
+        readers: ["code_128_reader", "code_39_reader"]
     }
 }, function(err) {
     if (err) {
